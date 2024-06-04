@@ -1,0 +1,332 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.7, 9 August 2023) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" sample.tex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the date/location for \cvevent
+% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+
+% If your CV/résumé is in a language other than English,
+% then you probably want to change these so that when you
+% copy-paste from the PDF or run pdftotext, the location
+% and date marker icons for \cvevent will paste as correct
+% translations. For example Spanish:
+% \renewcommand{\locationname}{Ubicación}
+% \renewcommand{\datename}{Fecha}
+
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear.tex}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+\input{pubs-num.tex}
+
+
+\begin{document}
+\name{Willian Carlos Agostini}
+\tagline{Software Developer}
+%% You can add multiple photos on the left or right
+% \photoR{2.8cm}{Globe_High}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{willian.agostini@gmail.com}
+  \phone{(54) 99985-4701}
+  \location{Chapecó, SC}
+  \linkedin{agostini-willian}
+  \github{WillianAgostini}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{Projetos}
+
+\cvevent{Axios}{Contribuidor no projeto open source github/axios}{Mar 2022 - o momento}{}
+Contribuições que incluíram resolver alguns bugs, adicionar alguns recursos legais e até mesmo aprimorar a documentação no repositório.
+
+
+Confira minhas contribuições nesse projeto \href{https://github.com/axios/axios/issues?q=commenter%3AWillianAgostini}{\textcolor{blue}{\underline{github/axios}}}.
+
+\cvsection{Experiência}
+
+\cvevent{Senior Backend Developer}{Compass.uol}{Jul 2022 - o momento}{Remoto}
+
+A Compass UOL, parte do Grupo UOL, é uma empresa de tecnologia que oferece serviços impulsionando a
+transformação digital de negócios. Auxilia empresas a inovar, transformar suas operações e se destacar
+em suas respectivas indústrias.
+
+\vspace{0.2cm}Atuo como Senior Backend Developer especializado em Node.js, utilizando as tecnologias JavaScript, TypeScript, AWS, Jest e NestJS para criar soluções que melhor atendem o cliente.
+
+\vspace{0.2cm} Atuando como consultor na Fleetcor Technologies, uma empresa líder global em pagamentos corporativos que ajuda as empresas a gastar menos fornecendo soluções inovadoras.
+
+\vspace{0.2cm} Possuo habilidades para estruturar, escalar, implementar padrões de segurança, otimizar performance e automatizar testes em aplicações web, trabalhando em equipes de desenvolvimento ágil para entregar soluções de alta qualidade e escaláveis.
+
+\divider
+
+\cvevent{Full Stack Developer}{Trafegus Sistemas}{Nov 2020 -- Jul 2022}{Chapecó, SC}
+Full stack developer especializado em Node.js e PHP, também utilizando as tecnologias Jest, Python, Docker e JavaScript para o desenvolvimento de aplicações. Com experiência em construir e manter aplicações web escaláveis e de alta performance, bem como trabalhar em equipes de desenvolvimento ágil para entregar projetos com sucesso.
+
+
+\divider
+
+\cvevent{Full Stack Developer}{Bionexus Allagro}{Mar 2019 -- Nov 2020}{Chapecó, SC}
+Como back-end developer, lidei com a reestruturação da arquitetura de software do servidor para atender às necessidades da empresa e reduzir o consumo de recursos computacionais. Além disso, fui responsável pelo projeto e desenvolvimento dos aplicativos móveis da empresa, utilizando as minhas habilidades em Python, Docker e Node.js.
+
+\divider
+\newpage
+\cvevent{Full Stack Developer}{M8 Sistemas}{Jan 2017 -- Nov 2017}{Chapecó, SC}
+Como desenvolvedor Full Stack, lidei com o projeto e desenvolvimento dos aplicativos móveis da empresa, além de atuar no desenvolvimento dos demais produtos web.
+
+
+\medskip
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the current column
+
+\cvsection{Educação}
+
+\cvevent{Pós-graduação Lato Sensu - Especialização em Inteligência Artificial}{PUC Minas}{Fev 2021 -- Dez 2022}{}
+
+\divider
+
+\cvevent{Bacharelado em Engenharia de Computação}{Universidade do Oeste de Santa Catarina}{Fev 2013 -- Jun 2020}{}
+
+\medskip
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the current column
+
+\cvsection{Certificações}
+
+\begin{itemize}
+  \item Desenvolvimento AWS 2020 com foco em Serverless;
+  \item Padrões de Projeto GoF (Design Patterns);
+  \item Node JS: Advanced Concepts;
+  \item Mastering ChatGPT Models: From Fine-tuning to Deployment;
+  \item Advanced SQL;
+\end{itemize}
+
+O restante das certificações e seus certificados podem ser encontradas \href{https://www.linkedin.com/in/agostini-willian/details/certifications/}{\textcolor{blue}{\underline{aqui}}}.
+
+\cvsection{Demais projetos}
+Confira minhas contribuições nesses projetos 
+
+\href{https://github.com/Unitech/pm2/issues?q=commenter%3AWillianAgostini+}{\textcolor{blue}{\underline{Unitech/pm2}}}
+
+\href{https://github.com/jestjs/jest/issues?q=commenter%3AWillianAgostini+}{\textcolor{blue}{\underline{jest/jest}}}
+
+\href{https://github.com/sindresorhus/got/issues?q=commenter%3AWillianAgostini+}{\textcolor{blue}{\underline{sindresorhus/got}}}
+
+\href{https://github.com/BrasilAPI/BrasilAPI/issues?q=commenter%3AWillianAgostini+}{\textcolor{blue}{\underline{BrasilAPI/BrasilAPI}}}
+
+\href{https://github.com/WillianAgostini/brasilapi-js}{\textcolor{blue}{\underline{WillianAgostini/brasilapi-js}}}
+
+
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{habilidades interpessoais}
+
+\cvtag{Autodidatismo} 
+\cvtag{Adaptabilidade}
+\cvtag{Respeito}
+\cvtag{Colaboração / Trabalho em equipe}
+\cvtag{Resiliência}
+\cvtag{Organização}
+
+\cvsection{habilidades técnicas}
+
+\begin{itemize}
+\item{Principais Linguagens de Desenvolvimento}
+\end{itemize}
+
+\cvtag{Javascript}
+\cvtag{Typescript}
+\cvtag{Python}
+
+\divider\smallskip
+
+\begin{itemize}
+\item{Principais Frameworks e Plataformas}
+\end{itemize}
+\cvtag{Node.js}
+\cvtag{Jest}
+\cvtag{Axios}
+\cvtag{NestJS}
+\cvtag{Express}
+
+\divider\smallskip
+
+\begin{itemize}
+\item{Nuvem}
+\end{itemize}
+\cvtag{AWS}
+\cvtag{AWS Lambda}
+\cvtag{Api Gateway}
+\cvtag{SQS}
+\cvtag{S3}
+
+\divider\smallskip
+
+\begin{itemize}
+\item{Banco de Dados}
+\end{itemize}
+\cvtag{PostgreSQL}
+\cvtag{DynamoDB}
+
+\divider\smallskip
+
+\begin{itemize}
+\item{Princípios de Design e Desenvolvimento}
+\end{itemize}
+\cvtag{SOLID}
+\cvtag{KISS}
+\cvtag{DRY}
+
+\divider\smallskip
+
+\begin{itemize}
+\item{Hospedagem de Repositório, CI/CD}
+\end{itemize}
+\cvtag{GitLab}
+\cvtag{GitHub}
+\cvtag{AzureDevops}
+
+\divider\smallskip
+
+\begin{itemize}
+\item{Apis} 
+\end{itemize}
+\cvtag{Rest}
+\cvtag{Soap}
+\cvtag{OAuth}
+\cvtag{JWT}
+
+\divider\smallskip
+
+\begin{itemize}
+\item{Testes}
+\end{itemize}
+\cvtag{Unidade}
+\cvtag{E2E}
+
+\cvsection{Linguagem}
+
+\cvskill{English}{3}
+%% Supports X.5 values.
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+\medskip
+
+
+
+
+\end{paracol}
+
+
+\end{document}
